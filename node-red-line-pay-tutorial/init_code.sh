@@ -24,9 +24,5 @@ sed -i -e "s*process.env.NODE_RED_PASSWORD*\"$UI_NODERED_PASSWORD_CRYPT\"*" node
 
 docker-compose up -d
 clear
-# Set DB user for Node-RED
-docker-compose run --rm mongodb /tmp/createNodeREDUser.sh shop
-sleep 10s
-clear
 
 echo "Your Node-RED password:${YOUR_NODERED_PASSWORD}"

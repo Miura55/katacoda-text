@@ -1,5 +1,5 @@
 {
-  "title": "Node-REDでLINE Pay APIを使って決済システムを使ってみる",
+  "title": "Node-REDでLINE Pay APIを使って決済システムを作ってみる",
   "description": "Node-REDでLINE Payを扱うノード「node-red-contrib-line-pay」の使い方を紹介",
   "difficulty": "Intermediate",
   "time": "60 minutes",

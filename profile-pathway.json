@@ -1,0 +1,10 @@
+{
+    "courses": [],
+    "scenarios": [
+        {
+            "title": "Node-REDでLINE Pay APIを使って決済システムを使ってみる",
+            "description": "Node-REDでLINE Payを扱うノード「node-red-contrib-line-pay」の使い方を紹介",
+            "id": "node-red-line-pay-tutorial"
+        }
+    ]
+}

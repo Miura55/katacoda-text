@@ -18,11 +18,11 @@ https://[[HOST_SUBDOMAIN]]-1880-[[KATACODA_HOST]].environments.katacoda.com
 
 URLを開くと以下のようにログイン画面が開くので、ユーザー名は `admin` 、パスワードは先程メモしたパスワードを使います。
 
-![login](./imgs/node-red-login.png)
+![login](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/node-red-login.png)
 
 無事にログインが完了すると、以下のようなフローエディタが開くので、これでNode-REDの実行環境の用意ができています。
 
-![node-red-editor](./imgs/node-red-editor.png)
+![node-red-editor](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/node-red-editor.png)
 
 ### 注意
 katacodaの実行環境は60分が経過すると強制終了されて作業内容が破棄されます。なので60分以内にサンプルアプリを動かすようにしましょう。
@@ -32,15 +32,15 @@ katacodaの実行環境は60分が経過すると強制終了されて作業内�
 
 まずはNode-REDのフローエディタの画面の右上のハンバーガーメニューから「パレットの追加」を選択します。
 
-![palette](./imgs/manage-palette.png)
+![palette](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/manage-palette.png)
 
 「ノードを追加」タブをクリックして、検索窓から`node-red-contrib-line-pay`を検索して `ノードを追加`をクリックします。
 
-![install](./imgs/install-node.png)
+![install](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/install-node.png)
 
 インストール時に以下のようなダイアログが表示されますので、そのまま `追加`をクリックします。
 
-![confirm-install](./imgs/confirm-install.png)
+![confirm-install](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/confirm-install.png)
 
 同様の手順で、以下のノードもインストールしてください。
 

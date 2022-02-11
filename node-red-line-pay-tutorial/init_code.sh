@@ -3,10 +3,11 @@
 # Clone playground
 git clone https://github.com/Miura55/node-red-playeground-with-mongodb playground
 cd playground
+sudo chmod -R 777 ./
 
 # Set the password for Node-RED
 npm install bcryptjs
-YOUR_NODERED_PASSWORD=$(openssl rand -base64 12 | fold -w 10 | head -1)
+YOUR_NODERED_PASSWORD=$(more /dev/urandom | tr -d -c '[:alnum:]' | fold -w 10 | head -1)
 UI_NODERED_PASSWORD_CRYPT=$(node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" ${YOUR_NODERED_PASSWORD})
 
 # Delete .env file if it exists

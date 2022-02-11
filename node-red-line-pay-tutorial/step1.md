@@ -10,17 +10,17 @@
 
 フローをコピーして、Node-REDのフローエディタの右上のハンバーガーメニューから「読み込み」を選択します。
 
-![import-menu](./imgs/import-menu.png)
+![import-menu](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/import-menu.png)
 
 以下のようにJsonエディタが表示されるので、先程コピーしたJsonを貼り付けます。貼り付けたら「読み込み」ボタンをクリックします。
 
-![import-flow](./imgs/import-flow.png)
+![import-flow](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/import-flow.png)
 
 読み込みが完了するとフローエディタ上に`Step1`タブが表示されます。
 
 クリックすると以下のようなフローができています。
 
-![step1-flow](./imgs/step1-flow.png)
+![step1-flow](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/step1-flow.png)
 
 ## 必要な認証情報を入力
 続いてLINE Payノードに設定するAPIの認証情報を設定していきます。
@@ -29,7 +29,7 @@
 
 その後、Configの項目にある鉛筆マークをクリックします。
 
-![line-pay-config](./imgs/line-pay-config.png)
+![line-pay-config](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/line-pay-config.png)
 
 必要な項目を入力します。
 
@@ -40,22 +40,22 @@
 
 必要な項目を入力したら、「更新」ボタンをクリックします。
 
-![edit-config](./imgs/edit-config.png)
+![edit-config](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/edit-config.png)
 
 他のLINE Payノード(`Confirm`、`Refund`、`PaymentDetails`)に関しては上記で設定した認証設定をドロップダウンから選択できるようになるので、それぞれ設定していきます。
 
-![config-dropdown](./imgs/config-dropdown.png)
+![config-dropdown](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/config-dropdown.png)
 
 ## リクエストパラメータを設定
 今度はRequest APIに必要なリクエストパラメータを設定します。
 
 functionノードの中で `Request APIのリクエストパラメータ`をダブルクリックします。
 
-![function-request-api](./imgs/function-request-api.png)
+![function-request-api](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/function-request-api.png)
 
 ダブルクリックしたときに表示されるコードエディタ画面の1行目にある `appUrl`の値を今起動しているNode-REDのURLに変更します。
 
-![code-edit-step1](./imgs/code-edit-step1.png)
+![code-edit-step1](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/code-edit-step1.png)
 
 改めてになりますが、Node-REDのURLは以下のものになるので、右側のクリップボードアイコンをクリックしてURLをコピーして書き換えても大丈夫です。
 
@@ -63,7 +63,7 @@ functionノードの中で `Request APIのリクエストパラメータ`をダ�
 
 ここまでできたら最後に右上の「デプロイ」ボタンをクリックして変更内容を保存します。
 
-![deploy-button](./imgs/deploy-button.png)
+![deploy-button](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/deploy-button.png)
 
 ## 動作確認
 それでは動作確認をしてみます。
@@ -74,7 +74,7 @@ https://[[HOST_SUBDOMAIN]]-1880-[[KATACODA_HOST]].environments.katacoda.com/shop
 
 URLを開くとこのようにシンプルなショッピングサイトが表示されます。
 
-![book-store](./imgs/book-store.png)
+![book-store](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/book-store.png)
 
 試しに金額の書かれたボタンをクリックされると商品がカートに追加された状態になります。
 
@@ -82,15 +82,15 @@ URLを開くとこのようにシンプルなショッピングサイトが表�
 
 このとき、Request APIが実行されて決済URLが「支払いを実行」ボタンに仕込まれている状態になるのでクリックしてLINE Payで決済を実行します。
 
-![payment-button](./imgs/payment-button.png)
+![payment-button](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/payment-button.png)
 
 決済を行う前にLINEアカウントにログインする必要があるので、メールアドレス・パスワードを入力するか、LINEアプリのQRコードからログインしてみましょう。
 
-![line-login](./imgs/line-login.png)
+![line-login](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/line-login.png)
 
 LINE アカウントでログインすると以下のように決済画面が表示されます。「PAY NOW」ボタンをクリックすると決済が実行されます。
 
-![pay-now](./imgs/pay-now.png)
+![pay-now](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/pay-now.png)
 
 「決済が完了しました」と表示されたら決済画面は閉じて大丈夫です。
 
@@ -98,6 +98,6 @@ LINE アカウントでログインすると以下のように決済画面が表
 
 決済の詳細を確認できたり、返金をできたりするので試してみましょう。
 
-![payment-complete](./imgs/payment-complete.png)
+![payment-complete](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/payment-complete.png)
 
 Step1はこれで終わりです。次はLINE PayにちなんでLINE botからLINE Payを使えるようにするサンプルを紹介します。

@@ -46,6 +46,6 @@ katacodaの実行環境は60分が経過すると強制終了されて作業内�
 
 - `node-red-contrib-uuid`
 - `node-red-contrib-mongodb3`
-- `node-red-contrib-line-messaging-api`
+- `node-red-contrib-line-messaging-api`(Step2でLINE botを使ったサンプルを試す場合)
 
 以上で環境構築は完了です。次のステップからサンプルアプリを動かしていきます。

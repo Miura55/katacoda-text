@@ -20,19 +20,13 @@ sed -i -e "s/\/\/adminAuth:/adminAuth:{\x0A\
     },\x0A\
     \/\/adminAuth:/" $YOUR_NODERED_SETTING_DIR
 
-sed -i -e "s*process.env.NODE_RED_PASSWORD*$UI_NODERED_PASSWORD_CRYPT*" nodered/settings.js
-
-# Delete .env file if it exists
-if [ -e ".env" ]; then
-    rm .env
-fi
-
-# Write password to .env file
-echo "NODE_RED_PASSWORD='${UI_NODERED_PASSWORD_CRYPT}'" >>.env
+sed -i -e "s*process.env.NODE_RED_PASSWORD*\"$UI_NODERED_PASSWORD_CRYPT\"*" nodered/settings.js
 
 docker-compose up -d
 clear
+# Set DB user for Node-RED
 docker-compose run --rm mongodb /tmp/createNodeREDUser.sh shop
 sleep 10s
+clear
 
 echo "Your Node-RED password:${YOUR_NODERED_PASSWORD}"

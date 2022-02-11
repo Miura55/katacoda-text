@@ -1,0 +1,35 @@
+{
+  "title": "Node-REDでLINE Pay APIを使って決済システムを使ってみる",
+  "description": "Node-REDでLINE Payを扱うノード「node-red-contrib-line-pay」の使い方を紹介",
+  "difficulty": "Intermediate",
+  "time": "60 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 0",
+        "text": "step0.md"
+      },
+      {
+        "title": "Step 1",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "init_code.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

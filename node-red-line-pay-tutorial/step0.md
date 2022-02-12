@@ -45,7 +45,7 @@ Node-REDのフローエディタは以下のURLから開きます。
 
 https://[[HOST_SUBDOMAIN]]-1880-[[KATACODA_HOST]].environments.katacoda.com
 
-URLを開くと以下のようにログイン画面が開くので、ユーザー名は `admin` 、パスワードは先程メモしたパスワードを使います。
+URLを開くと以下のようにログイン画面が開くので、ユーザー名は `admin`{{copy}} 、パスワードは先程メモしたパスワードを使います。
 
 ![login](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/node-red-login.png)
 
@@ -63,7 +63,7 @@ katacodaの実行環境は60分が経過すると強制終了されて作業内�
 
 ![palette](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/manage-palette.png)
 
-「ノードを追加」タブをクリックして、検索窓から`node-red-contrib-line-pay`を検索して `ノードを追加`をクリックします。
+「ノードを追加」タブをクリックして、検索窓から`node-red-contrib-line-pay`{{copy}} を検索して `ノードを追加`をクリックします。
 
 ![install](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/install-node.png)
 
@@ -71,10 +71,10 @@ katacodaの実行環境は60分が経過すると強制終了されて作業内�
 
 ![confirm-install](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/confirm-install.png)
 
-同様の手順で、以下のノードもインストールしてください。
+同様の手順で、以下のノードもインストールしてください。(それぞれのノード名をクリックするとクリップボードにコピーできます)
 
-- `node-red-contrib-uuid`
-- `node-red-contrib-mongodb3`
-- `node-red-contrib-line-messaging-api`(Step2でLINE botを使ったサンプルを試す場合)
+- `node-red-contrib-uuid`{{copy}}
+- `node-red-contrib-mongodb3`{{copy}}
+- `node-red-contrib-line-messaging-api`{{copy}} (Step2でLINE botを使ったサンプルを試す場合)
 
 以上で環境構築は完了です。次のステップからサンプルアプリを動かしていきます。

@@ -75,11 +75,11 @@ functionノードの中で `Request APIのリクエストパラメータ`をダ�
 
 ダブルクリックしたときに表示されるコードエディタ画面の1行目にある `appUrl`の値を今起動しているNode-REDのURLに変更します。
 
-![code-edit-step1](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/code-edit-step1.png)
-
 改めてになりますが、Node-REDのURLは以下のものになるので、右側のクリップボードアイコンをクリックしてURLをコピーして書き換えても大丈夫です。
 
 `https://[[HOST_SUBDOMAIN]]-1880-[[KATACODA_HOST]].environments.katacoda.com`{{copy}}
+
+![code-edit-step1](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/code-edit-step1.png)
 
 ここまでできたら最後に右上の「デプロイ」ボタンをクリックして変更内容を保存します。
 

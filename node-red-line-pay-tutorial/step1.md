@@ -35,7 +35,7 @@ Jsonをクリックするとクリップボードにコピーできます。
 
 以下のようにSandboxのAPIのURIは入力されていますが、チャネルIDとチャネルシークレットは入力されていません。
 
-![line-pay-config-edit](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/setting-line-pay-config.png)
+![settings-linepay-config](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/setting-linepay-config.png)
 
 事前に準備したSandboxのAPIの認証情報を以下の項目に入力します。
 
@@ -51,7 +51,7 @@ Jsonをクリックするとクリップボードにコピーできます。
 
 右側のメニューから歯車アイコンをクリックして設定ノードの編集画面を開いてMongo DBのユーザー情報の設定ノードを開きます。
 
-![setting-mongodb-node](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/setting-mongodb-node.png)
+![setting-mongodb-node](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/setting-mongodb-config.png)
 
 接続先のURIは設定されていますが、ユーザー名とパスワードは設定していません。
 

@@ -4,23 +4,23 @@
 ## セットアップ
 必要なソフトウェアのセットアップは起動時に自動で行われます。
 
-今回はNode-REDの他に決済情報をDBに溜め込むために、**Mongo DB**を使用しています。
+今回はNode-REDの他に決済情報をDBに溜め込むために、Mongo DBを使用しています。
 
-Mongo DBは簡単に言うとNoSQLのデータベースです。
+Mongo DBはNoSQLのデータベースです。テーブルの構造を定義しなくても簡単にデータを貯めることができます。
 
-そのMongo DBをNode-REDに接続するためのユーザーもこのセットアップで行っています。
+そのMongo DBをNode-REDに接続するためのユーザーの作成もこのセットアップで行っています。
 
 最終的に以下の表示がされたら今回使用するデータベースとそのデータベースに接続するユーザーの作成が完了しています
 
 ```json
 Successfully added user: {
-        "user" : "nodered",
-        "roles" : [
-                {
-                        "role" : "readWrite",
-                        "db" : "shop"
-                }
-        ]
+    "user" : "nodered",
+    "roles" : [
+        {
+            "role" : "readWrite",
+            "db" : "shop"
+        }
+    ]
 }
 ```
 
@@ -29,11 +29,13 @@ Successfully added user: {
 
 そのため、先程の初回起動時にパスワードを自動で設定しています。
 
-そのパスワードは以下のコマンドを実行すると表示されます。コマンドの部分をクリックするだけで右側のターミナルでコマンドが実行されます。
+設定されているパスワードはインストール完了時に表示される `Your Node-RED password:YOUR_PASSWORD` の行にある `YOUR_PASSWORD` になりますので、忘れないようにメモしておきましょう。
+
+たまに先程のMongo DBのユーザーだけ表示されてパスワードが表示されないことがあります。
+
+その時は以下のコマンドを実行すると表示されます。コマンドの部分をクリックするだけで右側のターミナルでコマンドが実行されます。
 
 `echo "Your Node-RED password:${YOUR_NODERED_PASSWORD}"`{{execute}}
-
-設定されているパスワードはインストール完了時に表示される `Your Node-RED password:YOUR_PASSWORD` の行にある `YOUR_PASSWORD` の部分です。
 
 このパスワードでNode-REDにログインする必要があるので忘れずにメモしておいてください。
 

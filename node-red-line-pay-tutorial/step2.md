@@ -18,9 +18,42 @@ Step1のときと同様にフローエディターのハンバーガーメニュ
 
 ![import-flow](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/import-flow.png)
 
-読み込みが完了すると、フローエディタ上に `Step2`タブに以下のようなフローが表示されます。
+読み込み時に以下のダイアログが表示されます。これはいくつかのノードの内容に重複があるので読み込んで大丈夫かを確認するものです。
+
+ここは内容を確認するために「ノードを参照」をクリックします。
+
+![conflict-dialog](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/conflict-dialog.png)
+
+すると、設定ノードにいくつか確認があるので、Mongo DBの設定ノードについてはチェックをつけた上で右側の「置換」にあるチェックボックスにもチェックを入れておいてください。
+
+LINE Payの設定ノード(test)については、チェックボックスを外しておいてください。
+
+以上の設定を終えたら、「選択したノードを読み込み」をクリックします。
+
+![resolve-conflict](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/resolve-conflict.png)
+
+読み込みが完了すると、フローエディタ上に `Step2`タブが作成されて以下のようなフローが表示されます。
 
 ![step2-flow](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/step2-flow.png)
+
+## リクエストパラメータを設定
+Step1と同様にRequest APIに必要なリクエストパラメータを設定します。
+
+functionノードの中で `Request APIのリクエストパラメータ`をダブルクリックします。
+
+![function-request-api](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/function-request-api.png)
+
+ダブルクリックしたときに表示されるコードエディタ画面の1行目にある `appUrl`の値を今起動しているNode-REDのURLに変更します。
+
+改めてになりますが、Node-REDのURLは以下のものになるので、右側のクリップボードアイコンをクリックしてURLをコピーして書き換えても大丈夫です。
+
+`https://[[HOST_SUBDOMAIN]]-1880-[[KATACODA_HOST]].environments.katacoda.com`{{copy}}
+
+![code-edit-step1](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/code-edit-step1.png)
+
+ここまでできたら最後に右上の「デプロイ」ボタンをクリックして変更内容を保存します。
+
+![deploy-button](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/deploy-button.png)
 
 ## Messaging APIの認証情報を入力
 フローを読み込んだところでMessaging APIの認証情報を設定していきます。
@@ -28,3 +61,25 @@ Step1のときと同様にフローエディターのハンバーガーメニュ
 フローの中の「ReplyMessage」ノードをダブルクリックします。
 
 ![reply-message-node](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/reply-message-node.png)
+
+Messaging APIのチャネルシークレットとアクセストークンを入力する項目があるので、ご自分のチャネルから確認したものを入力します。
+
+入力した「完了」ボタンをクリックして、設定を閉じます。
+
+![set-reply-message-node](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/set-reply-message-node.png)
+
+そして、もう一箇所アクセストークンを設定します。それは支払い完了時にユーザーにレシートを送信するためにリクエストパラメータを設定しているfunctionノードです。
+
+「Step1」タブの中にある「レシートを作成」と書かれたfunctionノードをダブルクリックします。
+
+![make-receipt-function](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/make-receipt-function.png)
+
+コードエディタが表示されるので、1行目の `accessToken`の値をご自分のMessaging APIのアクセストークンに変更してください。
+
+変更したら「完了」ボタンを押して、設定を閉じます。
+
+![fuction-make-receipt](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/fuction-make-receipt.png)i
+
+ここまで設定が完了したら、右上の「デプロイ」ボタンをクリックして変更内容を保存します。
+
+## Messaging APIのWebhook URLを設定

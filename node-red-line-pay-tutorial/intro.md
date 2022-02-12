@@ -7,3 +7,6 @@
 
 - LINE PayのAPIを実行するために必要なチャネルIDとチャネルシークレットを発行しておいてください。Sandbox環境で発行する時には、[こちら](https://pay.line.me/jp/developers/techsupport/sandbox/creation)から発行できます。
 - LINEのMessaging APIのチャネルを作成しておいてください(Step2でLINE botを使ったサンプルを試す場合)。Messaging APIのチャネルは[こちら](https://developers.line.biz/ja/docs/messaging-api/getting-started/#using-console)を参考にして作成します。
+
+## 注意
+katacodaの実行環境は60分が経過すると強制終了して作業内容が破棄されます。なので60分以内にサンプルアプリを動かすようにしましょう。

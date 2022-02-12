@@ -4,13 +4,15 @@
 ## セットアップ
 必要なソフトウェアのセットアップは起動時に自動で行われます。
 
+全部終わるまでかなり時間がかかるので完了するまで待っていただければと思います。
+
 今回はNode-REDの他に決済情報をDBに溜め込むために、Mongo DBを使用しています。
 
 Mongo DBはNoSQLのデータベースです。テーブルの構造を定義しなくても簡単にデータを貯めることができます。
 
 そのMongo DBをNode-REDに接続するためのユーザーの作成もこのセットアップで行っています。
 
-最終的に以下の表示がされたら今回使用するデータベースとそのデータベースに接続するユーザーの作成が完了しています
+最終的に以下の出力が表示されたら今回使用するデータベースとそのデータベースに接続するユーザーの作成が完了しています
 
 ```json
 Successfully added user: {
@@ -53,8 +55,30 @@ URLを開くと以下のようにログイン画面が開くので、ユーザ�
 
 ![node-red-editor](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/node-red-editor.png)
 
-### 注意
-katacodaの実行環境は60分が経過すると強制終了されて作業内容が破棄されます。なので60分以内にサンプルアプリを動かすようにしましょう。
+### トラブルシューティング
+セットアップ中に `Error: couldn't connect to server mongodb:27017`というエラーが出ることがあります。
+
+これはMongo DBのサーバーが起動していないときに発生するエラーで、このエラーが出ているときにユーザーを追加してもエラーになるので、その対策としてエラーが解消されるまで待機するように以下の処理をセットアップスクリプトを入れています。
+
+```sh
+until mongo --quiet --host mongodb -u "root" -p "admin" --authenticationDatabase 'admin' --eval "db.getMongo()"; do
+	echo 2>&1 "MongoDB is unavailable - sleeping"
+	sleep 1
+done
+```
+そのため、エラーが出ても最終的に以下のようにMongo DBのユーザーが追加されていれば問題ないのでご安心ください。
+
+```json
+Successfully added user: {
+    "user" : "nodered",
+    "roles" : [
+        {
+            "role" : "readWrite",
+            "db" : "shop"
+        }
+    ]
+}
+```
 
 ## 必要なノードをインストール
 続いてNode-REDを使うために必要なノードをインストールします。

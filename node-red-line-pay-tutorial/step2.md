@@ -3,6 +3,8 @@
 
 今回は飲食店で導入が進んでいるモバイルオーダーを題材にしてみます。
 
+**一部の機能はStep1で作成したフローを使っているので、必ずStep1を完了させてから進めるようにしてください**
+
 ## フローのコピー
 今回のフローは以下のJsonになるので、Step1と同様にコピーしてください。
 
@@ -36,6 +38,15 @@ LINE Payの設定ノード(test)については、チェックボックスを外
 
 ![step2-flow](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/step2-flow.png)
 
+### トラブルシューティング
+このときLINE PayのRequestノードで以下の用に赤い三角形が表示されるときは、設定ノードが正しく設定されていない状態です。
+
+![no-config-setting-request](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/no-config-setting-request.png)
+
+この場合は、Requestノードをダブルクリックして、以下のように「Config」の項目に「test」と表示された設定ノードが表示されていたら、正常に設定できているので、「完了」ボタンをクリックして閉じます。
+
+![check-request-config](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/check-request-config.png)
+
 ## リクエストパラメータを設定
 Step1と同様にRequest APIに必要なリクエストパラメータを設定します。
 
@@ -50,10 +61,6 @@ functionノードの中で `Request APIのリクエストパラメータ`をダ�
 `https://[[HOST_SUBDOMAIN]]-1880-[[KATACODA_HOST]].environments.katacoda.com`{{copy}}
 
 ![code-edit-step1](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/code-edit-step1.png)
-
-ここまでできたら最後に右上の「デプロイ」ボタンをクリックして変更内容を保存します。
-
-![deploy-button](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/deploy-button.png)
 
 ## Messaging APIの認証情報を入力
 フローを読み込んだところでMessaging APIの認証情報を設定していきます。
@@ -80,7 +87,9 @@ Messaging APIのチャネルシークレットとアクセストークンを入�
 
 ![fuction-make-receipt](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/fuction-make-receipt.png)i
 
-ここまで設定が完了したら、右上の「デプロイ」ボタンをクリックして変更内容を保存します。
+ここまでできたら最後に右上の「デプロイ」ボタンをクリックして変更内容を保存します。
+
+![deploy-button](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/deploy-button.png)
 
 ## Messaging APIのWebhook URLを設定
 ここからはMessaging APIのWebhook URLを設定します。

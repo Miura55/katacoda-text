@@ -83,3 +83,73 @@ Messaging APIのチャネルシークレットとアクセストークンを入�
 ここまで設定が完了したら、右上の「デプロイ」ボタンをクリックして変更内容を保存します。
 
 ## Messaging APIのWebhook URLを設定
+ここからはMessaging APIのWebhook URLを設定します。
+
+LINE Developersで今回使用するMessaging APIのチャネルの設定画面を開き、「Messaging API設定」タブを開きます。
+
+![messaging-api-channel](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/messaging-api-channel.png)
+
+スクロールしていくと、「Webhook設定」という項目が出てくると思うので以下のURLをWebhook URLに設定します。
+
+`https://[[HOST_SUBDOMAIN]]-1880-[[KATACODA_HOST]].environments.katacoda.com/callback`{{copy}}
+
+URLを設定したら、「検証」ボタンを押して、「成功」とダイアログが表示されることを確認します。
+
+![confirm-webhook](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/confirm-webhook.png)
+
+検証できたら、「Webhookの利用」をオンにします。
+
+![enable-webhook](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/enable-webhook.png)
+
+## 応答メッセージを無効にする
+Webhook設定の下に「LINE公式アカウント機能」ありますが、この中の「応答メッセージ」と「あいさつメッセージ」をそれぞれ無効にします。
+
+右端の「編集」をクリックするとLINE Official Account Managerが開きます。
+
+![line-official-account-setting](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/line-official-account-setting.png)
+
+遷移先の「応答設定」にある「挨拶メッセージ」と「応答メッセージ」をそれぞれ「オフ」にします。
+
+![reply-setting](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/reply-setting.png)
+
+
+## 動作確認
+これでLINE botが用意できました。最後に動作確認をしていきましょう。
+
+botを友だち追加したら、トーク画面を開き、`メニュー`と入力してみます。
+
+するとメニューの一覧が横並びに表示されます。
+
+![bot-call-menu](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/bot-call-menu.jpg)
+
+メニューの中の「Add Cart」ボタンをタップするとメニュー名がメッセージとして送信されます。
+
+返信が来たら注文内容が追加された状態です。
+
+![bot-order](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/bot-order.jpg)
+
+何個か適当に注文したら、最後に`支払い`と入力してみます。
+
+すると、「LINE Payでお支払い」ボタンが表示されるので、タップしてLINE Payの決済を始めます。
+
+![bot-pay](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/bot-pay.jpg)
+
+ボタンをクリックするとオートログインでそのまま決済画面が表示されます。
+
+金額を確認して「PAY NOW」ボタンを押して決済を始めます。
+
+![bot-pay-now](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/bot-pay-now.jpg)
+
+しばらくすると、「決済が完了しました。」と表示されて決済が完了です。
+
+![bot-pay-complete](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/bot-pay-complete.jpg)
+
+Step1のときと同様に決済完了画面が表示されるのと同時にLINEレシートが送信されます。
+
+レシートの品目には先程注文した商品とその価格が表示されていることが確認できます。
+
+![bot-receipt](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/bot-receipt.jpg)
+
+ちなみに支払い完了後に遷移されるURLはStep1で作成した`/confirm`と同じです。
+
+![confirm-url](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/confirm-url.png)

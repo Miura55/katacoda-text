@@ -14,12 +14,14 @@ UI_NODERED_PASSWORD_CRYPT=$(node -e "console.log(require('bcryptjs').hashSync(pr
 sed -i -e "s*process.env.NODE_RED_PASSWORD*\"$UI_NODERED_PASSWORD_CRYPT\"*" nodered/settings.js
 
 docker-compose up -d
-
+cat <<EOS | xargs -L1 -P 3 -I{} sh -c '{}'
 # install nodes
 docker-compose exec nodered npm install --prefix=/data node-red-contrib-line-pay node-red-contrib-uuid node-red-contrib-mongodb3 node-red-contrib-line-messaging-api
-docker-compose restart
-clear
-echo "Your Node-RED password:${YOUR_NODERED_PASSWORD}"
 
 # Set DB user for Node-RED
 docker-compose run --rm mongodb /tmp/createNodeREDUser.sh shop
+EOS
+docker-compose restart
+clear
+
+echo "Your Node-RED password:${YOUR_NODERED_PASSWORD}"

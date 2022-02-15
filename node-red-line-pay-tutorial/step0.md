@@ -106,7 +106,7 @@ docker-compose exec nodered npm install --prefix=/data node-red-contrib-line-pay
 
 ```
 docker-compose restart nodered
-```
+```{{execute}}
 
 再起動した後、再度Node-REDを開いたときに左のノード一覧をスクロールしたときに
 

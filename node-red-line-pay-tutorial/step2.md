@@ -39,7 +39,7 @@ LINE Payの設定ノード(test)については、チェックボックスを外
 ![step2-flow](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/step2-flow.png)
 
 ### トラブルシューティング
-このときLINE PayのRequestノードで以下の用に赤い三角形が表示されるときは、設定ノードが正しく設定されていない状態です。
+LINE PayのRequestノードで以下のように赤い三角形が表示されるときは、設定ノードが正しく設定されていない状態です。
 
 ![no-config-setting-request](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/no-config-setting-request.png)
 

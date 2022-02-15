@@ -18,9 +18,5 @@ clear
 
 echo "Your Node-RED password:${YOUR_NODERED_PASSWORD}"
 
-# install nodes
-docker-compose exec nodered npm install --prefix=/data node-red-contrib-line-pay node-red-contrib-uuid node-red-contrib-mongodb3 node-red-contrib-line-messaging-api
-docker-compose restart nodered
-
 # Set DB user for Node-RED
 docker-compose run --rm mongodb /tmp/createNodeREDUser.sh shop

@@ -83,22 +83,35 @@ Successfully added user: {
 ## 必要なノードをインストール
 続いてNode-REDを使うために必要なノードをインストールします。
 
-まずはNode-REDのフローエディタの画面の右上のハンバーガーメニューから「パレットの追加」を選択します。
+通常はフローエディタからインストールしますが、今回は以下のコマンドを実行するとインストールすることができます。
 
-![palette](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/manage-palette.png)
+コマンドをクリックしてインストールしてください。
 
-「ノードを追加」タブをクリックして、検索窓から`node-red-contrib-line-pay`{{copy}} を検索して `ノードを追加`をクリックします。
+```
+docker-compose exec nodered npm install --prefix=/data node-red-contrib-line-pay node-red-contrib-uuid node-red-contrib-mongodb3 node-red-contrib-line-messaging-api
+```{{execute}}
 
-![install](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/install-node.png)
+最終的に以下のようにインストールしたノード名が4つ表示されたらインストール完了です。
 
-インストール時に以下のようなダイアログが表示されますので、そのまま `追加`をクリックします。
+```
++ node-red-contrib-mongodb3@2.0.1
++ node-red-contrib-line-pay@0.0.1
++ node-red-contrib-uuid@0.0.4
++ node-red-contrib-line-messaging-api@0.1.9
+```
 
-![confirm-install](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/confirm-install.png)
+インストールしたノードを使えるようにするために一度Node-REDを再起動します。
 
-同様の手順で、以下のノードもインストールしてください。(それぞれのノード名をクリックするとクリップボードにコピーできます)
+以下のコマンドを実行して再起動します。
 
-- `node-red-contrib-uuid`{{copy}}
-- `node-red-contrib-mongodb3`{{copy}}
-- `node-red-contrib-line-messaging-api`{{copy}} (Step2でLINE botを使ったサンプルを試す場合)
+```
+docker-compose restart nodered
+```
+
+再起動した後、再度Node-REDを開いたときに左のノード一覧をスクロールしたときに
+
+以下のように今回インストールしたノードが表示されていたらノードが使える状態になります。
+
+![check-installed-node](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/check-installed-node.png)
 
 以上で環境構築は完了です。次のステップからサンプルアプリを動かしていきます。

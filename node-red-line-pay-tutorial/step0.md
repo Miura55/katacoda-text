@@ -83,15 +83,15 @@ Successfully added user: {
 ## 必要なノードをインストール
 続いてNode-REDを使うために必要なノードをインストールします。
 
-通常はフローエディタからインストールしますが、今回は以下のコマンドを実行するとインストールすることができます。
+通常はフローエディタからインストールすることが多いですが、今回はnpmコマンドでインストールします。
 
-コマンドをクリックしてインストールしてください。
+以下のコマンドをクリックすることでインストールできます。
 
 ```
 docker-compose exec nodered npm install --prefix=/data node-red-contrib-line-pay node-red-contrib-uuid node-red-contrib-mongodb3 node-red-contrib-line-messaging-api
 ```{{execute}}
 
-最終的に以下のようにインストールしたノード名が4つ表示されたらインストール完了です。
+以下のようにインストールしたノード名が4つ表示されたらインストール完了です。
 
 ```
 + node-red-contrib-mongodb3@2.0.1
@@ -102,15 +102,15 @@ docker-compose exec nodered npm install --prefix=/data node-red-contrib-line-pay
 
 インストールしたノードを使えるようにするために一度Node-REDを再起動します。
 
-以下のコマンドを実行して再起動します。
+再起動は以下のコマンドを実行します。
 
 ```
 docker-compose restart nodered
 ```{{execute}}
 
-再起動した後、再度Node-REDを開いたときに左のノード一覧をスクロールしたときに
+再起動した後、再度Node-REDを開いたときに左のノード一覧をスクロールしたときに以下のように今回インストールしたノードが表示されていたらノードが使える状態になります。
 
-以下のように今回インストールしたノードが表示されていたらノードが使える状態になります。
+もし何も表示されないときはブラウザをリロードしてみてください。
 
 ![check-installed-node](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/check-installed-node.png)
 

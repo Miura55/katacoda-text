@@ -14,6 +14,7 @@ UI_NODERED_PASSWORD_CRYPT=$(node -e "console.log(require('bcryptjs').hashSync(pr
 sed -i -e "s*process.env.NODE_RED_PASSWORD*\"$UI_NODERED_PASSWORD_CRYPT\"*" nodered/settings.js
 
 docker-compose up -d
+docker-compare run --rm nodered npm install --prefix=/data node-red-contrib-line-pay node-red-contrib-uuid node-red-contrib-mongodb3 node-red-contrib-line-messaging-api
 clear
 echo "Your Node-RED password:${YOUR_NODERED_PASSWORD}"
 

@@ -16,6 +16,10 @@
       {
         "title": "Step 2",
         "text": "step2.md"
+      },
+      {
+        "title": "Appendix",
+        "text": "appendix.md"
       }
     ],
     "intro": {

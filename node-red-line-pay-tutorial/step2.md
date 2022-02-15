@@ -162,3 +162,7 @@ Step1のときと同様に決済完了画面が表示されるのと同時にLIN
 ちなみに支払い完了後に遷移されるURLはStep1で作成した`/confirm`と同じです。
 
 ![confirm-url](https://raw.githubusercontent.com/Miura55/katacoda-text/main/node-red-line-pay-tutorial/imgs/confirm-url.png)
+
+これでStep2は完了です。次はAppendixとして、今回使用した技術について簡単に紹介します。
+
+今回作成したアプリケーションについて詳しく知りたい方はぜひご覧ください。
